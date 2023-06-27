@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="genresLinks (genres)" th:if="${genres != null}">
+<!--/*@thymesVar id="genre" type="com.example.hw_3.domain.Genre"*/-->
+    <li th:if="${genres != null && genres.getParentId() != null}" th:replace="~{fragmets/genresLinks :: genresLinks(${genres.getParent()})}">
+    <li class="breadcrumbs-item" th:if="${genres != null}">
+        <a th:href="'/bookshop/genres/genre/'+${genres.getId()}" th:text="${genres.getName()}">Жанры</a>
+    </li>
+</body>
+</html>

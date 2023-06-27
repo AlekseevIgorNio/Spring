@@ -15,12 +15,10 @@ public class BookMapper implements RowMapper<Book> {
                 .price(rs.getString("price"))
                 .priceOld(rs.getString("price_old"))
                 .title(rs.getString("title"))
-                .author(Author.builder()
-                        .id(rs.getInt("id"))
-                        .firstname(rs.getString("firstname"))
-                        .lastname(rs.getString("lastname"))
-                        .patronymic(rs.getString("patronymic"))
-                        .build())
+                .description(rs.getString("title"))
+                .bestseller(rs.getInt("is_bestseller") == 1)
+                .pubDate(rs.getString("pub_date"))
+                .image(rs.getString("image"))
                 .build();
     }
 }

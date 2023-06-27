@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="Tags" th:fragment="genresTags (genre)">
+    <!--/*@thymesVar id="genre" type="com.example.hw_3.domain.Genre"*/-->
+    <div class="Tags-title">
+        <div class="Tag">
+            <a th:href="'./genres/genre/'+${genre.getId()}"
+               th:text="${genre.getName()}"></a>
+        </div>
+    </div>
+    <div th:each="child : ${genre.getChild()}">
+        <div class="Tag"
+             th:insert="${not #lists.isEmpty(child.getChild())} ? ~{fragmets/genresTags :: genresTags(${child})} : _">
+            <a th:href="'./genres/genre/'+${child.getId()}"
+               th:text="${child.getName()}"></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

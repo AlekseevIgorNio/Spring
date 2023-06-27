@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface AuthorService {
 
-    List<String> getDistinctFirstLetterOfFirstname();
-
     Map<String, List<Author>> getMapWithFirstLetterAndArrayOfAuthors();
+
+    Author getAuthorById(Integer id);
 }

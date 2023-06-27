@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -15,6 +17,9 @@ public class Author {
     private String firstname;
     private String lastname;
     private String patronymic;
+    private String photo;
+    private String description;
+    private List<Book> books;
 
     public String getFio(){
         return StringUtils.joinWith(" ", firstname, lastname, patronymic);

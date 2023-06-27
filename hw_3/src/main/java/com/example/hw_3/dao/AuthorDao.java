@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface AuthorDao {
 
-    List<String> getDistinctFirstLetterOfFirstname();
-
     List<Author> getAllAuthors();
+
+    List<Author> getAuthorsByBookId(int bookId);
+
+    Author getAuthorById(Integer id);
 }

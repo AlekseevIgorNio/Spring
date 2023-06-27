@@ -14,6 +14,8 @@ public class AuthorMapper implements RowMapper<Author> {
                 .firstname(rs.getString("firstname"))
                 .lastname(rs.getString("lastname"))
                 .patronymic(rs.getString("patronymic"))
+                .photo(rs.getString("photo"))
+                .description(rs.getString("description"))
                 .build();
     }
 }
